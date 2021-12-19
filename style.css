@@ -27,4 +27,56 @@ h6 {
 p {
   font-weight: 400;
 }
+
+.header {
+  padding: 1rem 0.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid #b6bcc8;
+}
+
+.header__main {
+  gap: clamp(2.2rem, 3.5vw, 4rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(1rem, 1.8vw, 2.3rem);
+}
+
+.header__nav-link {
+  color: #1d2025;
+  text-decoration: none;
+}
+
+.header__additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(1.8rem, 3vw, 3.5rem);
+}
+
+.header__user {
+  max-width: 3.5rem;
+}
 /*# sourceMappingURL=style.css.map */
