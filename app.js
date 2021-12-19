@@ -1,3 +1,5 @@
+// Image Switch
+
 const additionalImages = document.querySelectorAll(
 	'.item__preview-additional__item'
 );
@@ -14,3 +16,17 @@ for (let image of additionalImages) {
 		}
 	});
 }
+
+// Counter
+const minus = document.querySelector('.item__info-count__minus');
+const plus = document.querySelector('.item__info-count__plus');
+const result = document.querySelector('.item__info-count__result');
+
+minus.addEventListener('click', (event) => {
+	if (parseInt(result.textContent) > 0) {
+		result.textContent = parseInt(result.textContent) - 1;
+	}
+});
+plus.addEventListener('click', (event) => {
+	result.textContent = parseInt(result.textContent) + 1;
+});
