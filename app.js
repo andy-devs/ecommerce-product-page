@@ -30,3 +30,26 @@ minus.addEventListener('click', (event) => {
 plus.addEventListener('click', (event) => {
 	result.textContent = parseInt(result.textContent) + 1;
 });
+
+// Cart dropdown
+
+const cart = document.querySelector('.header__cart');
+const cartDropdown = document.querySelector('.header__cart-dropdown');
+
+window.addEventListener('click', (event) => {
+	if (
+		!event.target.classList.contains('header__cart-dropdown') &&
+		!event.target.classList.contains('header__cart-dropdown__head') &&
+		!event.target.classList.contains('header__cart-dropdown__block') &&
+		!event.target.classList.contains(
+			'header__card-dropdown__block-empty'
+		) &&
+		!event.target.classList.contains('header__cart')
+	) {
+		console.log(event.target.classList);
+		cartDropdown.classList.remove('_active');
+	}
+});
+cart.addEventListener('click', (event) => {
+	cartDropdown.classList.toggle('_active');
+});
