@@ -25,20 +25,15 @@ const result = document.querySelector('.item__info-count__result');
 const cartCount = document.querySelector('.header__cart-count');
 let countValue = 0;
 
-function changeCount() {
-	if (result !== 0) {
-		cartCount.classList.add('_active');
-		cartCount.textContent = countValue;
-	}
-}
-
 minus.addEventListener('click', (event) => {
-	if (parseInt(countValue) > 0) {
-		result.textContent = --countValue;
+	if (countValue > 0) {
+		countValue -= 1;
+		result.textContent = countValue;
 	}
 });
 plus.addEventListener('click', (event) => {
-	result.textContent = ++countValue;
+	countValue += 1;
+	result.textContent = countValue;
 });
 
 // Cart dropdown
@@ -56,10 +51,27 @@ window.addEventListener('click', (event) => {
 		) &&
 		!event.target.classList.contains('header__cart')
 	) {
-		console.log(event.target.classList);
 		cartDropdown.classList.remove('_active');
 	}
 });
 cart.addEventListener('click', (event) => {
 	cartDropdown.classList.toggle('_active');
 });
+
+// Add Item to Cart
+
+const addButton = document.querySelector('.item__info-cart');
+
+addButton.addEventListener('click', (event) => {
+	addToCart();
+});
+
+function addToCart() {
+	if (countValue > 0) {
+		cartCount.classList.add('_active');
+		cartCount.textContent = countValue;
+	} else {
+		cartCount.classList.remove('_active');
+		cartCount.textContent = countValue;
+	}
+}
