@@ -22,13 +22,23 @@ const minus = document.querySelector('.item__info-count__minus');
 const plus = document.querySelector('.item__info-count__plus');
 const result = document.querySelector('.item__info-count__result');
 
+const cartCount = document.querySelector('.header__cart-count');
+let countValue = 0;
+
+function changeCount() {
+	if (result !== 0) {
+		cartCount.classList.add('_active');
+		cartCount.textContent = countValue;
+	}
+}
+
 minus.addEventListener('click', (event) => {
-	if (parseInt(result.textContent) > 0) {
-		result.textContent = parseInt(result.textContent) - 1;
+	if (parseInt(countValue) > 0) {
+		result.textContent = --countValue;
 	}
 });
 plus.addEventListener('click', (event) => {
-	result.textContent = parseInt(result.textContent) + 1;
+	result.textContent = ++countValue;
 });
 
 // Cart dropdown

@@ -105,6 +105,10 @@ p {
   cursor: pointer;
 }
 
+.header__cart-count {
+  display: none;
+}
+
 .header__cart-dropdown {
   display: none;
   color: black;
