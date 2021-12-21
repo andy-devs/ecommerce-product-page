@@ -79,7 +79,7 @@ p {
 	max-width: 3.5rem;
 }
 .header__user:hover {
-	border: 3px solid $orange;
+	border: 2px solid $orange;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -122,7 +122,7 @@ p {
 	-moz-border-radius: 10px;
 	-ms-border-radius: 10px;
 	-o-border-radius: 10px;
-	width: clamp(8rem, 25vw, 25rem);
+	width: clamp(9rem, 26vw, 27rem);
 }
 .header__cart-dropdown__head {
 	font-weight: 700;
@@ -130,11 +130,11 @@ p {
 	border-bottom: 3px solid $light-grayish-blue;
 }
 .header__cart-dropdown__block {
-	height: clamp(6rem, 8vw, 12rem);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
+	padding: 1rem 1.5rem 0.5rem 1.5rem;
 }
 .header__card-dropdown__block-empty {
 	color: $dark-grayish-blue;
@@ -143,6 +143,60 @@ p {
 .header__cart-dropdown._active {
 	display: block;
 	position: absolute;
+}
+.header__cart-dropdown__item {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	margin-bottom: 1rem;
+}
+.header__cart-dropdown__item-image__wrapper {
+	max-width: 3rem;
+}
+.header__cart-dropdown__item-image {
+	width: 100%;
+	height: auto;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	-o-border-radius: 7px;
+}
+.header__cart-dropdown__item-text {
+	color: $dark-grayish-blue;
+}
+.header__cart-dropdown__item-text__head {
+	margin-bottom: 0.3rem;
+}
+.price-label {
+	color: $black;
+	font-weight: 700;
+}
+.header__cart-dropdown__item-text__delete {
+	cursor: pointer;
+}
+.header__cart-dropdown__button {
+	cursor: pointer;
+	background: $orange;
+	color: $white;
+	width: 95%;
+	padding: 0.8rem 0rem;
+	font-size: 1.1rem;
+	text-align: center;
+	border: none;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	transition: opacity 0.2s ease-in-out;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+}
+.header__cart-dropdown__button:hover {
+	opacity: 0.6;
 }
 
 .main {

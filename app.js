@@ -24,6 +24,7 @@ const result = document.querySelector('.item__info-count__result');
 
 const cartCount = document.querySelector('.header__cart-count');
 let countValue = 0;
+let cartValue = 0;
 
 minus.addEventListener('click', (event) => {
 	if (countValue > 0) {
@@ -42,15 +43,7 @@ const cart = document.querySelector('.header__cart');
 const cartDropdown = document.querySelector('.header__cart-dropdown');
 
 window.addEventListener('click', (event) => {
-	if (
-		!event.target.classList.contains('header__cart-dropdown') &&
-		!event.target.classList.contains('header__cart-dropdown__head') &&
-		!event.target.classList.contains('header__cart-dropdown__block') &&
-		!event.target.classList.contains(
-			'header__card-dropdown__block-empty'
-		) &&
-		!event.target.classList.contains('header__cart')
-	) {
+	if (!cartDropdown.contains(event.target) && event.target !== cart) {
 		cartDropdown.classList.remove('_active');
 	}
 });
@@ -69,9 +62,26 @@ addButton.addEventListener('click', (event) => {
 function addToCart() {
 	if (countValue > 0) {
 		cartCount.classList.add('_active');
-		cartCount.textContent = countValue;
+		cartValue += countValue;
+		cartCount.textContent = cartValue;
+		result.textContent = '0';
+		countValue = 0;
+	}
+}
+
+// Cart Items View
+
+function renderCartItems() {
+	const block = document.querySelector('.header__cart-dropdown__block');
+	if (cartCount > 0) {
+		const cartItem = document.createElement('div');
+		cartItem.className = 'header__cart-dropdown__item';
 	} else {
-		cartCount.classList.remove('_active');
-		cartCount.textContent = countValue;
+		block.insertAdjacentHTML(
+			'afterbegin',
+			`<p class="header__card-dropdown__block-empty">
+				Your cart is empty
+			</p>`
+		);
 	}
 }
