@@ -55,8 +55,13 @@ cart.addEventListener('click', (event) => {
 
 const addButton = document.querySelector('.item__info-cart');
 
+window.onload = () => {
+	renderCartItems();
+};
+
 addButton.addEventListener('click', (event) => {
 	addToCart();
+	renderCartItems();
 });
 
 function addToCart() {
@@ -71,12 +76,43 @@ function addToCart() {
 
 // Cart Items View
 
+const block = document.querySelector('.header__cart-dropdown__block');
+
 function renderCartItems() {
-	const block = document.querySelector('.header__cart-dropdown__block');
-	if (cartCount > 0) {
-		const cartItem = document.createElement('div');
-		cartItem.className = 'header__cart-dropdown__item';
+	if (cartValue > 0) {
+		block.innerHTML = '';
+		block.insertAdjacentHTML(
+			'afterbegin',
+			`<div class="header__cart-dropdown__item">
+				<div class="header__cart-dropdown__item-image__wrapper">
+					<img
+						src="./images/image-product-1.jpg"
+						alt=""
+						class="header__cart-dropdown__item-image"
+					/>
+				</div>
+				<div class="header__cart-dropdown__item-text">
+					<p class=" header__cart-dropdown__item-text__head">
+						Fall Limited Edition Sneakers
+					</p>
+					<p class="header__cart-dropdown__item-text__price">
+						$125.00 x ${cartValue}
+						<span class="price-label">$${125 * cartValue}.00</span>
+					</p>
+				</div>
+				<img
+					src="./images/icon-delete.svg"
+					class="header__cart-dropdown__item-delete"
+					onclick="removeCartItem(event)"
+				/>
+				</div>
+				<button class="header__cart-dropdown__button">
+					Checkout
+				</button>
+			</div>`
+		);
 	} else {
+		block.innerHTML = '';
 		block.insertAdjacentHTML(
 			'afterbegin',
 			`<p class="header__card-dropdown__block-empty">
@@ -84,4 +120,20 @@ function renderCartItems() {
 			</p>`
 		);
 	}
+}
+
+// Remove Item from Cart
+
+function removeCartItem(event) {
+	event.target.parentElement.nextElementSibling.remove();
+	event.target.parentNode.remove();
+	block.insertAdjacentHTML(
+		'afterbegin',
+		`<p class="header__card-dropdown__block-empty">
+			Your cart is empty
+		</p>`
+	);
+	cartValue = 0;
+	cartCount.textContent = cartValue;
+	cartCount.classList.remove('_active');
 }
