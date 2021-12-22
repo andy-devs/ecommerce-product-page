@@ -1,13 +1,23 @@
-// Image Switch
+// Image Switch and Link Lightbox fix
 
 const additionalImages = document.querySelectorAll(
 	'.item__preview-additional__item'
 );
 const mainImage = document.querySelector('.item__preview-main__image');
+const imageLinks = document.querySelectorAll('[data-lightbox="sneakers"]');
+
+for (let link of imageLinks) {
+	link.addEventListener('click', (e) => {
+		if (!link.parentElement.classList.contains('_active')) {
+			e.preventDefault();
+		}
+	});
+}
 
 for (let image of additionalImages) {
 	image.addEventListener('click', (event) => {
 		if (!event.target.classList.contains('_active')) {
+			event.preventDefault();
 			for (let im of additionalImages) {
 				im.classList.remove('_active');
 			}
@@ -137,3 +147,10 @@ function removeCartItem(event) {
 	cartCount.textContent = cartValue;
 	cartCount.classList.remove('_active');
 }
+
+// Lightbox
+
+// lightbox.option({
+// 	resizeDuration: 200,
+// 	wrapAround: true,
+// });
