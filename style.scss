@@ -413,6 +413,26 @@ p {
 	display: none;
 }
 
+@media (max-width: 1000px) {
+	.main {
+		padding: 2rem 1rem;
+	}
+	.item {
+		gap: 3rem;
+	}
+	.item__info-heading {
+		margin-bottom: 1rem;
+	}
+	.item__info-cart {
+		padding: 0.7rem 2rem;
+	}
+	.item__info-interaction {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+}
+
 @media (max-width: 767px) {
 	.header {
 		padding: 0.5rem 1.3rem;
