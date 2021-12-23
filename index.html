@@ -11,6 +11,10 @@
 			href="./images/favicon-32x32.png"
 		/>
 
+		<link
+			href="./libs/splide-3.6.9/dist/css/splide.min.css"
+			rel="stylesheet"
+		/>
 		<link href="./libs/lightbox2/dist/css/lightbox.css" rel="stylesheet" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -156,6 +160,44 @@
 						</div>
 					</div>
 				</div>
+				<div class="splide item__preview--mobile">
+					<div class="splide__track">
+						<ul class="splide__list">
+							<li class="splide__slide">
+								<img
+									src="./images/image-product-1.jpg"
+									alt=""
+									class="item__preview-additional__item-image"
+									draggable="false"
+								/>
+							</li>
+							<li class="splide__slide">
+								<img
+									src="./images/image-product-2.jpg"
+									alt=""
+									class="item__preview-additional__item-image"
+									draggable="false"
+								/>
+							</li>
+							<li class="splide__slide">
+								<img
+									src="./images/image-product-3.jpg"
+									alt=""
+									class="item__preview-additional__item-image"
+									draggable="false"
+								/>
+							</li>
+							<li class="splide__slide">
+								<img
+									src="./images/image-product-4.jpg"
+									alt=""
+									class="item__preview-additional__item-image"
+									draggable="false"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<div class="item__info">
 					<p class="item__info-company">SNEAKER COMPANY</p>
 					<h1 class="item__info-heading">
@@ -166,15 +208,14 @@
 						companion. Featuring a durable rubber outer sole,
 						they’ll withstand everything the weather can offer.
 					</p>
-					<div class="item__info-pricing">
-						<p class="item__info-pricing__sale">$125.00</p>
-						<div class="item__info-pricing__amount">50%</div>
+					<div class="item__info-allprices">
+						<div class="item__info-pricing">
+							<p class="item__info-pricing__sale">$125.00</p>
+							<div class="item__info-pricing__amount">50%</div>
+						</div>
+						<p class="item__info-lastprice">$250.00</p>
 					</div>
-					<p class="item__info-lastprice">$250.00</p>
-					<div
-						class="item__info-interaction"
-						onselectstart="return false"
-					>
+					<div class="item__info-interaction">
 						<div class="item__info-count">
 							<div class="item__info-count__minus">
 								<img
@@ -206,6 +247,7 @@
 				</div>
 			</div>
 		</main>
+		<script src="./libs/splide-3.6.9/dist/js/splide.js"></script>
 		<script src="./libs/lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 		<script src="./app.js"></script>
 	</body>

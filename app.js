@@ -141,9 +141,12 @@ function removeCartItem(event) {
 	cartCount.classList.remove('_active');
 }
 
-// Lightbox
+// Splide
 
-// lightbox.option({
-// 	resizeDuration: 200,
-// 	wrapAround: true,
-// });
+const elms = document.getElementsByClassName('splide');
+
+for (var i = 0; i < elms.length; i++) {
+	new Splide(elms[i], {
+		pagination: false,
+	}).mount();
+}
