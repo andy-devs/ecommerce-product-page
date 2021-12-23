@@ -458,6 +458,12 @@ p {
 	.header__additional {
 		gap: 0.8rem;
 	}
+	.header__cart-dropdown {
+		width: 90%;
+		top: 4rem;
+		margin-left: 0;
+		left: calc(0% + 5vw);
+	}
 	.item {
 		flex-direction: column;
 		gap: 1.5rem;
