@@ -585,12 +585,19 @@ p {
   }
   .item__info {
     padding: 0 1rem;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
   .item__info-heading {
     line-height: 1.95rem;
     margin-bottom: 1rem;
   }
   .item__info-interaction {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    min-width: 80%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

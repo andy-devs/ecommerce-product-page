@@ -450,12 +450,15 @@ p {
 	}
 	.item__info {
 		padding: 0 1rem;
+		align-items: stretch;
 	}
 	.item__info-heading {
 		line-height: 1.95rem;
 		margin-bottom: 1rem;
 	}
 	.item__info-interaction {
+		align-self: center;
+		min-width: 80%;
 		flex-direction: column;
 		align-items: stretch;
 	}
