@@ -51,6 +51,10 @@ p {
 	display: flex;
 	align-items: center;
 }
+.header__icon {
+	cursor: pointer;
+	display: none;
+}
 .header__nav-list {
 	display: flex;
 	gap: clamp(0.8rem, 1.6vw, 2rem);
@@ -395,4 +399,43 @@ p {
 }
 .item__info-cart__text {
 	font-size: clamp(0.9rem, 1vw, 1.2rem);
+}
+
+.lightbox .lb-image {
+	border: none;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+	.header {
+		padding: 1rem 1.5rem;
+	}
+	.header__icon {
+		display: block;
+		margin-top: 0.2rem;
+		transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		-o-transform: scale(1.2);
+	}
+	.header__nav {
+		display: none;
+	}
+	.header__main {
+		gap: 1rem;
+	}
+	.header__user {
+		max-width: 2.8rem;
+	}
+	.header__additional {
+		gap: 1rem;
+	}
+	.item {
+		flex-direction: column;
+	}
 }

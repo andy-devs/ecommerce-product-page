@@ -4,15 +4,7 @@ const additionalImages = document.querySelectorAll(
 	'.item__preview-additional__item'
 );
 const mainImage = document.querySelector('.item__preview-main__image');
-const imageLinks = document.querySelectorAll('[data-lightbox="sneakers"]');
-
-for (let link of imageLinks) {
-	link.addEventListener('click', (e) => {
-		if (!link.parentElement.classList.contains('_active')) {
-			e.preventDefault();
-		}
-	});
-}
+const lightboxImage = document.querySelector('.item__preview-main__lightbox');
 
 for (let image of additionalImages) {
 	image.addEventListener('click', (event) => {
@@ -23,6 +15,7 @@ for (let image of additionalImages) {
 			}
 			image.classList.add('_active');
 			mainImage.src = event.target.src;
+			lightboxImage.href = event.target.src;
 		}
 	});
 }
