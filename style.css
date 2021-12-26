@@ -643,7 +643,7 @@ p {
     left: calc(0% + 5vw);
   }
   .item {
-    padding-top: 3rem;
+    padding-top: 3.4rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
