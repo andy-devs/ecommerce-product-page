@@ -1,3 +1,25 @@
+// Header Burger Switch
+
+const headerSwitch = document.querySelector('.header__icon');
+const headerNav = document.querySelector('.header__nav');
+const headerOpen = document.querySelector('.header__icon-image');
+const headerClose = document.querySelector('.header__icon-image--close');
+let headerState = false;
+
+headerSwitch.addEventListener('click', (e) => {
+	if (!headerState) {
+		headerNav.style.width = '250px';
+		headerClose.style.display = 'inline';
+		headerOpen.style.display = 'none';
+		headerState = true;
+	} else {
+		headerNav.style.width = '0px';
+		headerOpen.style.display = 'inline';
+		headerClose.style.display = 'none';
+		headerState = false;
+	}
+});
+
 // Image Switch and Link Lightbox fix
 
 const additionalImages = document.querySelectorAll(
