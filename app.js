@@ -78,9 +78,16 @@ const cart = document.querySelector('.header__cart');
 const cartDropdown = document.querySelector('.header__cart-dropdown');
 
 window.addEventListener('click', (event) => {
-	if (!cartDropdown.contains(event.target) && event.target !== cart) {
+	if (
+		!cartDropdown.contains(event.target) &&
+		event.target !== cart &&
+		event.target !== cartCount
+	) {
 		cartDropdown.classList.remove('_active');
 	}
+});
+cartCount.addEventListener('click', (event) => {
+	cartDropdown.classList.toggle('_active');
 });
 cart.addEventListener('click', (event) => {
 	cartDropdown.classList.toggle('_active');

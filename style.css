@@ -127,11 +127,30 @@ p {
 }
 
 .header__cart {
+  opacity: 0.8;
   padding: 0.5rem;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+}
+
+.header__cart:hover {
+  opacity: 1;
 }
 
 .header__cart-count {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
   display: none;
   position: absolute;
   margin-top: -1.3rem;
@@ -152,6 +171,10 @@ p {
 }
 
 .header__cart-dropdown {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   display: none;
   color: black;
   background-color: white;
@@ -246,6 +269,19 @@ p {
 
 .header__cart-dropdown__item-delete {
   cursor: pointer;
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+  -webkit-transition: filter 0.2s ea;
+  -moz-transition: filter 0.2s ea;
+  -ms-transition: filter 0.2s ea;
+  -o-transition: filter 0.2s ea;
+}
+
+.header__cart-dropdown__item-delete:hover {
+  filter: brightness(80%);
+  -webkit-filter: brightness(80%);
 }
 
 .header__cart-dropdown__button {
@@ -672,8 +708,8 @@ p {
     color: black;
     border-bottom: none;
   }
-  .header__user {
-    max-width: 2.5rem;
+  .header__user-wrapper {
+    width: 2.8rem;
   }
   .header__additional {
     gap: 0.8rem;
