@@ -44,7 +44,9 @@ for (let image of additionalImages) {
 
 // Counter
 const minus = document.querySelector('.item__info-count__minus');
+const minusImage = document.querySelector('.item__info-count__minus-image');
 const plus = document.querySelector('.item__info-count__plus');
+const plusImage = document.querySelector('.item__info-count__plus-image');
 const result = document.querySelector('.item__info-count__result');
 
 const cartCount = document.querySelector('.header__cart-count');
@@ -52,12 +54,20 @@ let countValue = 0;
 let cartValue = 0;
 
 minus.addEventListener('click', (event) => {
+	minusImage.style.transform = 'scale(0.8)';
+	setTimeout(() => {
+		minusImage.style.transform = 'scale(1)';
+	}, 200);
 	if (countValue > 0) {
 		countValue -= 1;
 		result.textContent = countValue;
 	}
 });
 plus.addEventListener('click', (event) => {
+	plusImage.style.transform = 'scale(0.8)';
+	setTimeout(() => {
+		plusImage.style.transform = 'scale(1)';
+	}, 200);
 	countValue += 1;
 	result.textContent = countValue;
 });
